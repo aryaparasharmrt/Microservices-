@@ -5,9 +5,9 @@ spring:
   application:
     name: USER-SERVICE
   datasource:
-    url: jdbc:mysql://localhost:3307/microservices
+    url: jdbc:mysql://localhost:3306/microserviceUser
     username: root
-    password: root
+    password: Arya123@#123
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -24,19 +24,19 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri:  https://dev-77584981.okta.com/oauth2/default
+          issuer-uri:  https://dev-79356697.okta.com/oauth2/default
       client:
         registration:
           my-internal-client:
             provider: okta
             authorization-grant-type: client_credentials
             scope: internal
-            client-id: 0oa7w65a24Px9Oyms5d7
-            client-secret: JfsTTqODW21uapbbhKjW42sGzjcNs86GN7WL5dfU
+            client-id: 0oahbrv01c2LH5P275d7
+            client-secret: dDYRYwtviETIJnYkz0zx-531LiTtpzudo_XUBxR_gyERRMwKiePLtPw4FkurR7eD
 
         provider:
           okta:
-            issuer-uri:  https://dev-77584981.okta.com/oauth2/default
+            issuer-uri:  https://dev-79356697.okta.com/oauth2/default
 
 
 
@@ -44,14 +44,14 @@ spring:
 
 #        spring.config.import= configserver:http://localhost:8085
 
-#eureka:
-#  instance:
-#    prefer-ip-address: true
-#  client:
-#    fetch-registry: true
-#    register-with-eureka: true
-#    service-url:
-#      defaultZone: http://localhost:8761/eureka
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 management:
   health:
     circuitbreakers:
@@ -96,7 +96,7 @@ resilience4j:
 
 okta:
   oauth2:
-    issuer: https://dev-77584981.okta.com/oauth2/default
+    issuer: https://ddev-79356697.okta.com/oauth2/default
     audience: api://default
 
 

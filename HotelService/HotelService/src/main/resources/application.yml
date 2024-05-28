@@ -4,9 +4,10 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/microservice
-    username: postgres
-    password: root
+    url: jdbc:mysql://localhost:3306/microserviceHotal?createTableIfNotExists=true
+    username: root
+    password: Arya123@#123
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,18 +17,21 @@ spring:
   config:
     import: optional:configserver:http://localhost:8085
 
-#eureka:
-#  instance:
-#    prefer-ip-address: true
-#  client:
-#    fetch-registry: true
-#    register-with-eureka: true
-#    service-url:
-#      defaultZone: http://localhost:8761/eureka
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 
 okta:
   oauth2:
-    issuer: https://dev-77584981.okta.com/oauth2/default
+    issuer: https://dev-79356697.okta.com/oauth2/default
     audience: api://default
+    client-id: 0oahbrv01c2LH5P275d7
+    client-secret: dDYRYwtviETIJnYkz0zx-531LiTtpzudo_XUBxR_gyERRMwKiePLtPw4FkurR7eD
+    scopes: openid, profile, email, offline_access
 
 
